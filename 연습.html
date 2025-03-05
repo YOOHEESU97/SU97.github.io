@@ -1,0 +1,97 @@
+// import,export
+//import API from "./util.js";
+import { APIKEY as KEY } from "./util";
+//console.log(KEY); //ohohoho123
+//console.log(API);
+//console.log(APIKEY);
+//import * as util from "./util.js"; // 명은 util로 해서 util.js에 있는 export 할당
+//console.log(util.APIKEY);
+//console.log(util.default);
+
+//
+class QWER {
+  constructor(qqq, www) {
+    this.qqq = qqq;
+    this.www = www;
+  }
+  great() {
+    console.log("console");
+  }
+}
+
+const QWE = new QWER("QWER", 4);
+
+console.log(QWE.qqq);
+console.log(QWE.www);
+
+// 디스트럭쳐링 할당
+const [max, row] = ["1", "2"];
+
+console.log(max); // 1
+console.log(row); // 2
+
+const { n: qn, a } = {
+  n: "name",
+  a: "aaaa",
+};
+
+console.log(qn + " : " + a); // name : aaaa
+
+const contry = { first: "ja", last: "pen" };
+const { first, last } = contry;
+console.log(first + last); // japen
+
+//map은 새 배열 반환
+const ab = ["a", "b", "c"];
+
+const abc = ab.map((item) => item + "!");
+
+console.log(abc);
+
+// 함수 디스트럭처링 key 이름 같게 해야함
+function localStor({ id, currency }) {
+  localStorage.setItem("id", id);
+  localStorage.setItem("currency", currency);
+}
+
+//localStor({ id: "1", currency: "2" });
+
+console.log(localStorage.getItem("id"));
+
+// 스프레드 연산자
+
+const io = ["IOS", "AOS"];
+
+const ip = ["AIOS"];
+
+const mergeIo = [...io, ...ip];
+console.log(mergeIo); // [IOS, AOS, AIOS]
+
+const yu = {
+  yy: "1",
+  uu: "2",
+};
+
+const tu = {
+  zz: "3",
+  ...yu,
+};
+
+console.log(tu); // { zz: "3", yy: "1", uu: "2" }
+
+for (const ii of mergeIo) {
+  console.log(ii);
+}
+
+function ggter(ggterFn) {
+  ggterFn();
+}
+// ggter함수의 매개변수로 console.log("이게 실행") 값으로 전달되고 ggterFn()을 실행을 시키니까 콘솔실행
+ggter(() => console.log("이게 실행"));
+
+function handleTimeout() {
+  console.log("Timed out");
+}
+
+// handleTimeout() 이렇게쓰면 바로 실행이 되어버리니, 함수 이름(참조)만 전달
+setTimeout(handleTimeout, 2000);
