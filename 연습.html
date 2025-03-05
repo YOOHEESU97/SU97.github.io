@@ -56,7 +56,7 @@ function localStor({ id, currency }) {
 
 //localStor({ id: "1", currency: "2" });
 
-console.log(localStorage.getItem("id"));
+console.log(localStorage.getItem("id")); // 1
 
 // 스프레드 연산자
 
@@ -64,7 +64,7 @@ const io = ["IOS", "AOS"];
 
 const ip = ["AIOS"];
 
-const mergeIo = [...io, ...ip];
+const mergeIo = [...io, ...ip]; 
 console.log(mergeIo); // [IOS, AOS, AIOS]
 
 const yu = {
@@ -80,11 +80,11 @@ const tu = {
 console.log(tu); // { zz: "3", yy: "1", uu: "2" }
 
 for (const ii of mergeIo) {
-  console.log(ii);
+  console.log(ii); // [IOS, AOS, AIOS]
 }
 
 function ggter(ggterFn) {
-  ggterFn();
+  ggterFn(); // "이게 실행"
 }
 // ggter함수의 매개변수로 console.log("이게 실행") 값으로 전달되고 ggterFn()을 실행을 시키니까 콘솔실행
 ggter(() => console.log("이게 실행"));
